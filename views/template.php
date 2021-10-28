@@ -16,13 +16,13 @@
 
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="nav navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="visually-hidden">(current)</span></a>
+            <a class="nav-item nav-link active" href="?controller=page&action=init">Home <span class="visually-hidden">(current)</span></a>
             <a class="nav-item nav-link" href="?controller=employees&action=init">Empleados</a>
         </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-xs|sm|md|lg|xl-1-12">
+            <div class="col-md">
                 <?php include_once("router.php"); ?>
             </div>
 

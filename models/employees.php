@@ -42,7 +42,15 @@ class Employee
         $sql->execute(array($id));
     }
 
-    public static function update($id)
+    public static function update($id, $name, $email)
+    {
+        $connectionBD = BD::createInstance();
+
+        $sql = $connectionBD->prepare("UPDATE `empleados` SET `name`=?, `email`=? WHERE `empleados`.`id`=?");
+        $sql->execute(array($name, $email, $id));
+    }
+
+    public static function find($id)
     {
         $connectionBD = BD::createInstance();
 
@@ -51,13 +59,5 @@ class Employee
 
         $employee = $sql->fetch();
         return new Employee($employee['id'], $employee['name'], $employee['email']);
-    }
-
-    public static function edit($name, $email, $id)
-    {
-        $connectionBD = BD::createInstance();
-
-        $sql = $connectionBD->prepare("UPDATE `empleados` SET `name`=?, `email`=? WHERE `empleados`.`id`=?");
-        $sql->execute(array($name, $email, $id));
     }
 }

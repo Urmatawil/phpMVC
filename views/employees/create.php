@@ -14,6 +14,7 @@
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="user@email.com" required>
             </div>
             <input name="" id="" class="btn btn-success" type="submit" value="Add Employee">
+            <a href="?controller=employees&action=init" id="" class="btn btn-danger" type="submit">Cancel</a>
 
         </form>
 

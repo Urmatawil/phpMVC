@@ -28,15 +28,18 @@ class EmployeesController
     {
 
         if ($_POST) {
+
             $id = $_POST['id'];
             $name = $_POST['name'];
             $email = $_POST['email'];
 
-            Employee::edit($id, $name, $email);
+
+            Employee::update($id, $name, $email);
+            header("location:./?controller=employees&action=init");
         }
 
         $id = $_GET['id'];
-        $employee = (Employee::update($id));
+        $employee = (Employee::find($id));
 
         include_once("views/employees/update.php");
     }
