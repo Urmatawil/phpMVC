@@ -18,7 +18,7 @@
                 <td>
                     <div class="btn-group" role="group" aria-label="">
                         <a href="?controller=employees&action=update&id=<?php echo $emp->id; ?>" class="btn btn-info">Edit</a>
-                        <a href="?controller=employees&action=delete&id=<?php echo $emp->id; ?>" class="btn btn-danger">Delete</a>
+                        <a href="?controller=employees&action=delete&id=<?php echo $emp->id; ?>" class="btn btn-danger" onclick="javascript:if(!confirm('¿Desea Eliminar?'))return false">Delete</a>
                     </div>
                 </td>
             </tr>
